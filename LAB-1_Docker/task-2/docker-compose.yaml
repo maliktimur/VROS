@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  lite-server:
+    image: node
+    ports:
+    - 2000:3000
+    working_dir: /lite-server
+    volumes:
+    - ./:/lite-server
+    command: bash -c "npm install --global lite-server && lite-server"

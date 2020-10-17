@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  json-server:
+    image: node
+    working_dir: /json-server
+    volumes:
+    - ./j-s_data:/json-server
+    command: bash json.sh
+    expose:
+    - 7777
+    restart: on-failure
+
+
+  lite-server:
+    image: node
+    working_dir: /lite-server
+    volumes:
+    - ./l-s_data:/lite-server
+    command: bash -c "npm install --global lite-server && lite-server"
+    expose:
+    - 3000
+    restart: on-failure
+  
+
+  nginx:
+    image: nginx
+    volumes:
+    - ./templates:/etc/nginx/templates
+    ports:
+    - "8080:80"
+    depends_on:
+    - json-server
+    - lite-server
+    restart: on-failure

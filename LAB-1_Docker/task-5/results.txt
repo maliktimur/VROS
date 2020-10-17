@@ -1,0 +1,65 @@
+http://localhost:8080/
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.13'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+    <h2>NGINX-LITE_SERVER</h2>
+    <h1>I am alive!!!</h1>
+</body>
+
+</html>
+
+http://localhost:8080/json
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>NGINX-JSON_SERVER</h2>
+    <h1>HELLO WORLD!</h1>
+</body>
+
+</html>
+
+
+http://localhost:8080/json/cars
+
+
+[
+  {
+    "id": 1,
+    "brand": "opel",
+    "model": "corsa"
+  },
+  {
+    "id": 2,
+    "brand": "ford",
+    "model": "fiesta"
+  }
+]
+
+
+http://localhost:8080/json/cars/2
+
+{
+  "id": 2,
+  "brand": "ford",
+  "model": "fiesta"
+}
